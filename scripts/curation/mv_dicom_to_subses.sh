@@ -14,6 +14,7 @@ for zip in zips; do
   seqdirs=`ls ${projectdir}/sub-${subid}`
   for seqdir in ${seqdirs}; do
     mv ${projectdir}/sub-${subid}/${seqdir}/DICOM/* ${projectdir}/sub-${subid}/${seqdir};
-    rm -r ${projectdir}/sub-${subid}/${seqdir}/DICOM
+    mv -r ${projectdir}/sub-${subid} ${projectdir}/Dicom
+    rm -r ${projectdir}/Dicom/sub-${subid}/${seqdir}/DICOM
   done
 done
