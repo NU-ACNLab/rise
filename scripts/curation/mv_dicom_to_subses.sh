@@ -13,4 +13,7 @@ for zip in zips; do
   mv ${projectdir}/ALLOY-RISE-${subid} ${projectdir}/sub-${subid}
   seqdirs=`ls ${projectdir}/sub-${subid}`
   for seqdir in ${seqdirs}; do
-    mv 
+    mv ${projectdir}/sub-${subid}/${seqdir}/DICOM/* ${projectdir}/sub-${subid}/${seqdir};
+    rm -r ${projectdir}/sub-${subid}/${seqdir}/DICOM
+  done
+done
