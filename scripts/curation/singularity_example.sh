@@ -20,3 +20,5 @@ singularity run --writable-tmpfs --cleanenv \
   -B /projects/b1108/data/BIDS_factory/Temple/data_dump/Alloy_RISE:/base \
   /home/erb9722/heudiconv_0.9.0.sif -d /base/Dicom/sub-{subject}/*/*.dcm \
   -o /base/Nifti/ -f /base/Nifti/code/heuristic.py -s 991 -c dcm2niix -b --overwrite
+
+#https://stackoverflow.com/questions/31233777/python-source-code-string-cannot-contain-null-bytes
