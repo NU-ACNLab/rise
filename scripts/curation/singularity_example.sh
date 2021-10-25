@@ -21,4 +21,7 @@ singularity run --writable-tmpfs --cleanenv \
   /home/erb9722/heudiconv_0.9.0.sif -d /base/Dicom/sub-{subject}/*/*.dcm \
   -o /base/Nifti/ -f /base/Nifti/code/heuristic.py -s 991 -c dcm2niix -b --overwrite
 
+# October 25, 2021: make sure to delete the Nifti/.heudiconv directory between
+# runs of the last command
+
 #https://stackoverflow.com/questions/31233777/python-source-code-string-cannot-contain-null-bytes
