@@ -1,1 +1,1 @@
-# RISE & CREST Projects
+# Project RISE
