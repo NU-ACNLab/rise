@@ -3,7 +3,6 @@ import os
 import json
 import csv
 
-log_file = ""
 def find_dates():
     csv_file = "/projects/b1108/studies/rise/scripts/rise-crest-qc-log.csv"
     partic_list = {}
