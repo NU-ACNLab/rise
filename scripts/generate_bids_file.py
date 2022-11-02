@@ -4,7 +4,7 @@ import json
 import csv
 
 def find_dates():
-    csv_file = "/projects/b1108/studies/rise/scripts/rise-crest-qc-log.csv"
+    csv_file = "/projects/b1108/studies/rise/scripts/rise-qc-log.csv"
     partic_list = {}
     with open(csv_file) as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
