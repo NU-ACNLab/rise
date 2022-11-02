@@ -29,6 +29,7 @@ def scans_to_file(partic, date, log_file):
         for scan in os.listdir(work_dir):
             for file in (work_dir + scan):   
                 #check to make sure it's a .json
+                print(file)
                 if(file.split(".")[1] == "json"):      
                     print(work_dir + scan + '/' + file)
                     # Opening JSON file
