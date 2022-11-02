@@ -27,7 +27,7 @@ def scans_to_file(partic, date, log_file):
         logfile.write("filname\tacq_time\n")
         #iterate through scans and add line to .tsv file
         for scan in os.listdir(work_dir):
-            for file in (work_dir + scan):   
+            for file in os.listdir(work_dir + scan):   
                 #check to make sure it's a .json\
                 print(work_dir + scan)
                 print(file)
@@ -49,7 +49,7 @@ def scans_to_file(partic, date, log_file):
                     datetime = date + "T" + time.split(".")[0]
                     line = scan + "/" + file + "\t" + datetime + "\n"
                     logfile.write(line)
-        file.close()
+        logfile.close()
 
 def main(): 
     pd_dict = find_dates()
