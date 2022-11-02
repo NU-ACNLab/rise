@@ -31,8 +31,8 @@ def scans_to_file(partic, date, log_file):
             if(os.path.isdir(work_dir + scan)):
                 for file in os.listdir(work_dir + scan):   
                     #check to make sure it's a .json\
-                    print(file)
                     if("json" in file):      
+                        print(file)
                         print(work_dir + scan + '/' + file)
                         # Opening JSON file
                         f = open(work_dir + scan + '/' + file)
@@ -42,11 +42,7 @@ def scans_to_file(partic, date, log_file):
                         time = data['AcquisitionTime']
                         # Closing file
                         f.close()
-                        #FORMAT
-                        #filname tab acq_time
-                        # scan/filename tab YYYY-MM-DDTHH:mm:SS
-                        # need to create this file at ses-1 folder level
-                        #write to output file
+                        #write to file
                         datetime = date + "T" + time.split(".")[0]
                         line = scan + "/" + file + "\t" + datetime + "\n"
                         logfile.write(line)
