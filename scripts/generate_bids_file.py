@@ -28,9 +28,9 @@ def scans_to_file(partic, date, log_file):
         #iterate through scans and add line to .tsv file
         for scan in os.listdir(work_dir):
             for file in (work_dir + scan):   
-                #check to make sure it's a .json
+                #check to make sure it's a .json\
+                print(work_dir + scan)
                 print(file)
-
                 if("json" in file):      
                     print(work_dir + scan + '/' + file)
                     # Opening JSON file
@@ -48,7 +48,7 @@ def scans_to_file(partic, date, log_file):
                     #write to output file
                     datetime = date + "T" + time.split(".")[0]
                     line = scan + "/" + file + "\t" + datetime + "\n"
-                    file.write(line)
+                    logfile.write(line)
         file.close()
 
 def main(): 
