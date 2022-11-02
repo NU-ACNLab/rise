@@ -31,7 +31,7 @@ def scans_to_file(partic, date, log_file):
                 #check to make sure it's a .json
                 print(file)
 
-                if(file.contains("json")):      
+                if("json" in file):      
                     print(work_dir + scan + '/' + file)
                     # Opening JSON file
                     f = open(work_dir + scan + '/' + file)
