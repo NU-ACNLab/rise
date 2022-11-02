@@ -23,7 +23,8 @@ def scans_to_file(partic, date, log_file):
                 + "/ses-1/"
     #open file:
     log_file_path = work_dir + log_file
-    with open(log_file_path, 'w') as logfile: 
+    with open(log_file_path, 'w') as logfile:
+        print(log_file_path) 
         logfile.write("filname\tacq_time\n")
         #iterate through scans and add line to .tsv file
         for scan in os.listdir(work_dir):
@@ -32,8 +33,6 @@ def scans_to_file(partic, date, log_file):
                 for file in os.listdir(work_dir + scan):   
                     #check to make sure it's a .json\
                     if("json" in file):      
-                        print(file)
-                        print(work_dir + scan + '/' + file)
                         # Opening JSON file
                         f = open(work_dir + scan + '/' + file)
                         # returns JSON object as dict
@@ -42,8 +41,8 @@ def scans_to_file(partic, date, log_file):
                         time = data['AcquisitionTime']
                         # Closing file
                         f.close()
-                        #write to file
-                        datetime = date + "T" + time.split(".")[0]
+                        #write to logfile
+                        datetime = date + "T" + time
                         line = scan + "/" + file + "\t" + datetime + "\n"
                         logfile.write(line)
         logfile.close()
