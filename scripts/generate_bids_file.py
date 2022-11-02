@@ -52,6 +52,7 @@ def main():
     for partic, date in pd_dict.items():
         #format = sub-####_ses-1_scans.tsv
         file = "sub-" + partic + "_ses-1_scans.tsv"
+        print(partic, date, file)
         scans_to_file(partic, date, file)
 
 
