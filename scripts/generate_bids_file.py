@@ -27,9 +27,9 @@ def scans_to_file(partic, date, log_file):
         logfile.write("filname\tacq_time\n")
         #iterate through scans and add line to .tsv file
         for scan in os.listdir(work_dir):
+            print(work_dir + scan)
             for file in os.listdir(work_dir + scan):   
                 #check to make sure it's a .json\
-                print(work_dir + scan)
                 print(file)
                 if("json" in file):      
                     print(work_dir + scan + '/' + file)
