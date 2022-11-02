@@ -28,27 +28,28 @@ def scans_to_file(partic, date, log_file):
         #iterate through scans and add line to .tsv file
         for scan in os.listdir(work_dir):
             print(work_dir + scan)
-            for file in os.listdir(work_dir + scan):   
-                #check to make sure it's a .json\
-                print(file)
-                if("json" in file):      
-                    print(work_dir + scan + '/' + file)
-                    # Opening JSON file
-                    f = open(work_dir + scan + '/' + file)
-                    # returns JSON object as dict
-                    data = json.load(f)
-                    # Get aquisition time
-                    time = data['AcquisitionTime']
-                    # Closing file
-                    f.close()
-                    #FORMAT
-                    #filname tab acq_time
-                    # scan/filename tab YYYY-MM-DDTHH:mm:SS
-                    # need to create this file at ses-1 folder level
-                    #write to output file
-                    datetime = date + "T" + time.split(".")[0]
-                    line = scan + "/" + file + "\t" + datetime + "\n"
-                    logfile.write(line)
+            if(os.path.isdir(work_dir + scan)):
+                for file in os.listdir(work_dir + scan):   
+                    #check to make sure it's a .json\
+                    print(file)
+                    if("json" in file):      
+                        print(work_dir + scan + '/' + file)
+                        # Opening JSON file
+                        f = open(work_dir + scan + '/' + file)
+                        # returns JSON object as dict
+                        data = json.load(f)
+                        # Get aquisition time
+                        time = data['AcquisitionTime']
+                        # Closing file
+                        f.close()
+                        #FORMAT
+                        #filname tab acq_time
+                        # scan/filename tab YYYY-MM-DDTHH:mm:SS
+                        # need to create this file at ses-1 folder level
+                        #write to output file
+                        datetime = date + "T" + time.split(".")[0]
+                        line = scan + "/" + file + "\t" + datetime + "\n"
+                        logfile.write(line)
         logfile.close()
 
 def main(): 
