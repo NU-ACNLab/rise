@@ -24,7 +24,7 @@ def scans_to_file(partic, date, log_file):
     #open file:
     log_file_path = work_dir + log_file
     with open(log_file_path, 'w') as logfile: 
-        file.write("filname\tacq_time\n")
+        logfile.write("filname\tacq_time\n")
         #iterate through scans and add line to .tsv file
         for scan in os.listdir(work_dir):
             for file in (work_dir + scan):   
