@@ -39,10 +39,11 @@ def scans_to_file(partic, date, log_file):
                         data = json.load(f)
                         # Get aquisition time
                         time = data['AcquisitionTime']
+                        nomiltime = time.split(".")[0]
                         # Closing file
                         f.close()
                         #write to logfile
-                        datetime = date + "T" + time
+                        datetime = date + "T" + nomiletime
                         line = scan + "/" + file + "\t" + datetime + "\n"
                         logfile.write(line)
         logfile.close()
