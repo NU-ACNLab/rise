@@ -43,7 +43,7 @@ def scans_to_file(partic, date, log_file):
                         # Closing file
                         f.close()
                         #write to logfile
-                        datetime = date + "T" + nomiletime
+                        datetime = date + "T" + nomiltime
                         line = scan + "/" + file + "\t" + datetime + "\n"
                         logfile.write(line)
         logfile.close()
