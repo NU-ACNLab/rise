@@ -16,7 +16,6 @@ def mover():
             wd = work_dir + partic + "/ses-1/"
             for folder in os.listdir(wd): 
              #checks to make sure it's a participant
-
                 try:
                     source = wd + folder
                     print (source)
@@ -27,6 +26,10 @@ def mover():
                         print(dest)
                         shutil.copytree(source, dest) 
                         print("Copied " + partic + " " + folder)
+                    elif("tsv" in folder):
+                        dest = "/projects/b1108/studies/rise/data/raw/neuroimaging/bids/"\
+                             + partic + "/ses-1/" + folder
+                        shutil.copy(source, dest)
                     else:
                         print("other")
                         dest = "/projects/b1108/studies/rise/data/raw/neuroimaging/bids/"\
